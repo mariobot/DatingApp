@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using DatingApp.API.Data;
 using DatingApp.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -39,6 +40,7 @@ namespace DatingApp.API
                 .AddJsonOptions(opt =>{
                     opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
+            services.AddAutoMapper();
             services.AddCors();
             services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
