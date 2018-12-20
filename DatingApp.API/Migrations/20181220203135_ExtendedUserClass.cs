@@ -60,34 +60,39 @@ namespace DatingApp.API.Migrations
                 table: "Users",
                 nullable: true);
 
-            migrationBuilder.AddColumn<int>(
-                name: "UserId",
-                table: "Photos",
-                nullable: true);
+            migrationBuilder.CreateTable(
+                name: "Photos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Url = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    DateAdded = table.Column<DateTime>(nullable: false),
+                    IsMain = table.Column<bool>(nullable: false),
+                    UserId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Photos_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Photos_UserId",
                 table: "Photos",
                 column: "UserId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Photos_Users_UserId",
-                table: "Photos",
-                column: "UserId",
-                principalTable: "Users",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Photos_Users_UserId",
-                table: "Photos");
-
-            migrationBuilder.DropIndex(
-                name: "IX_Photos_UserId",
-                table: "Photos");
+            migrationBuilder.DropTable(
+                name: "Photos");
 
             migrationBuilder.DropColumn(
                 name: "City",
@@ -128,10 +133,6 @@ namespace DatingApp.API.Migrations
             migrationBuilder.DropColumn(
                 name: "LookingFor",
                 table: "Users");
-
-            migrationBuilder.DropColumn(
-                name: "UserId",
-                table: "Photos");
         }
     }
 }
