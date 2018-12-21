@@ -18,6 +18,7 @@ export class ValueComponent implements OnInit {
   getValues() {
     this.http.get('http://localhost:5000/api/values/').subscribe(response => {
       this.values = response;
+      console.log(response);
     }, error => {
       console.log(error);
     });

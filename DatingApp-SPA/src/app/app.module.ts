@@ -18,6 +18,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
+import { ValueComponent } from './value/value.component';
 
 @NgModule({
    declarations: [
@@ -27,7 +28,8 @@ import { UserService } from './_services/user.service';
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      ValueComponent
    ],
    imports: [
       BrowserModule,
