@@ -19,7 +19,7 @@
         Welcome {{ authService.decodedToken?.unique_name | titlecase }}
       </a>
       <div class="dropdown-menu" *dropdownMenu>
-        <a class="dropdown-item" href="#" class="fa fa-user">Edit Profile</a>
+        <a class="dropdown-item" [routerLink]="['/member/edit']" class="fa fa-user">Edit Profile</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#" (click)="logout()" class="fa fa-sign-out">Logout</a>
       </div>
