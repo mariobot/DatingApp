@@ -3,5 +3,5 @@ export interface Photo {
     url: string;
     description: string;
     dateAdded: Date;
-    idMain: boolean;
+    isMain: boolean;
 }
