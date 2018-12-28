@@ -6,7 +6,7 @@ namespace DatingApp.API.Helpers
 
         public int PageNumber { get; set; } = 1;
 
-        public int pageSize = 5;
+        public int pageSize {get; set;} = 5;
 
         public int MyPoprerty
         {
