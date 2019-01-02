@@ -5,14 +5,12 @@ import { Observable } from 'rxjs';
 import { User } from '../_models/user';
 import { PaginatedResult } from '../_models/Pagination';
 import { map } from 'rxjs/operators';
-import { request } from 'https';
 
 /*const httpOption = {
   headers: new HttpHeaders({
     'Authorization': 'Bearer ' + localStorage.getItem('token')
   })
 };*/
-
 @Injectable({
   providedIn: 'root'
 })
