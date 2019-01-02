@@ -86,9 +86,7 @@ getMessages(id: number, page?, itemsPerPage?, messageContainer?) {
     params = params.append('pageNumber', page);
     params = params.append('pageSize', itemsPerPage);
   }
-
-  console.log('userid= ' + id);
-
+  
   return this.http.get<Message[]>(this.baseUrl + 'users/' + id + '/messages', {observe: 'response', params})
   .pipe(
     map(response => {
@@ -107,6 +105,15 @@ getMessagesThread(id: number, recipientId: number) {
 
 sendMessage(id: number, message: Message) {
   return this.http.post(this.baseUrl + 'users/' + id + '/messages', message );
+}
+
+deleteMessage(userid: number, id: number) {
+  return this.http.post(this.baseUrl + 'users/' + userid + '/messages/' + id , {} );
+}
+
+markAsRead(userid: number, messageid: number) {
+  return this.http.post(this.baseUrl + 'users/' + userid + '/messages/' + messageid + '/read', {})
+    .subscribe();
 }
 
 }

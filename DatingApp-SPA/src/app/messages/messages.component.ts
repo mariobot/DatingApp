@@ -27,7 +27,6 @@ export class MessagesComponent implements OnInit {
   }
 
   loadMessages() {
-    console.log('USR: ' + this.authService.decodedToken.nameid);
     this.userService.getMessages(this.authService.decodedToken.nameid, this.pagination.currentPage,
       this.pagination.itemsPerPage, this.messageContainer)
       .subscribe((res: PaginatedResult<Message[]>) => {
@@ -36,6 +35,17 @@ export class MessagesComponent implements OnInit {
       }, error => {
         this.alertify.error(error);
       });
+  }
+
+  deleteMessage(id: number) {
+    this.alertify.confirm('Are you sure you whant to delete this message', () => {
+      this.userService.deleteMessage(this.authService.decodedToken.nameid, id).subscribe(() => {
+        this.messages.splice(this.messages.findIndex(m => m.id === id), 1);
+        this.alertify.success('Message has been deleted');
+      }, error => {
+        this.alertify.error(error);
+      });
+    });
   }
 
   pageChanged(event: any) {
