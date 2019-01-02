@@ -91,7 +91,14 @@ namespace DatingApp.API
             //seeder.SeedUser(); // To initialize the Database
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
-            app.UseMvc();            
+            app.UseDefaultFiles(); // The order is important
+            app.UseStaticFiles(); // The order is important
+            app.UseMvc(routes => {
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Fallback", action = "Index" }
+                );
+            });            
         }
     }
 }
