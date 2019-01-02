@@ -33,6 +33,7 @@ import { PhotoEditComponent } from './members/photo-edit/photo-edit.component';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { ListsResolver } from './_resolvers/list.resolver';
 import { MessagesResolver } from './_resolvers/messages-resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -52,7 +53,8 @@ export function tokenGetter() {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditComponent,
-      TimeAgoPipe
+      TimeAgoPipe,
+      MemberMessagesComponent,
    ],
    imports: [
       BrowserModule,
