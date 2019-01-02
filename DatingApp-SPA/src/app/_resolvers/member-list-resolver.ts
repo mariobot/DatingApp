@@ -22,7 +22,7 @@ export class MemberListResolver implements Resolve<User[]> {
         return this.userService.getUsers(this.pageNumber, this.pageSize, this.userParams).pipe(
                 catchError(error => {
                 this.alertify.error(error);
-                this.router.navigate['/home'];
+                this.router.navigate(['/home']);
                 return of(null);
             })
         );
