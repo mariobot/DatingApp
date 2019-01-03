@@ -14,7 +14,15 @@ namespace DatingApp.API
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            try
+            {
+                CreateWebHostBuilder(args).Build().Run();    
+            }
+            catch (System.Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

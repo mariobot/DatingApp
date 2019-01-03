@@ -35,7 +35,7 @@ namespace DatingApp.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddJsonOptions(opt =>{
                     opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
@@ -70,7 +70,9 @@ namespace DatingApp.API
             }
             else
             {
-                app.UseExceptionHandler(builder => {
+                app.UseDeveloperExceptionPage();
+                /* 
+                    app.UseExceptionHandler(builder => {
                     builder.Run(async context => {
                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
@@ -82,8 +84,7 @@ namespace DatingApp.API
                         }
                     });
                 });
-
-
+                */
                 //app.UseHsts();
             }
 
