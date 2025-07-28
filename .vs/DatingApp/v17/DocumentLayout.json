@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\DatingApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A923D65-E6EE-4477-B7EB-5B6A84D8AE34}|DatingApp.API\\DatingApp.API.csproj|d:\\datingapp\\datingapp.api\\datingapp.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5A923D65-E6EE-4477-B7EB-5B6A84D8AE34}|DatingApp.API\\DatingApp.API.csproj|solutionrelative:datingapp.api\\datingapp.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A923D65-E6EE-4477-B7EB-5B6A84D8AE34}|DatingApp.API\\DatingApp.API.csproj|d:\\datingapp\\datingapp.api\\datingapp.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5A923D65-E6EE-4477-B7EB-5B6A84D8AE34}|DatingApp.API\\DatingApp.API.csproj|solutionrelative:datingapp.api\\datingapp.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,6 +59,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DatingApp.API",
+              "DocumentMoniker": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+              "RelativeDocumentMoniker": "DatingApp.API\\DatingApp.API.csproj",
+              "ToolTip": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+              "RelativeToolTip": "DatingApp.API\\DatingApp.API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-27T21:58:40.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatingApp.API",
+              "DocumentMoniker": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+              "RelativeDocumentMoniker": "DatingApp.API\\DatingApp.API.csproj",
+              "ToolTip": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+              "RelativeToolTip": "DatingApp.API\\DatingApp.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-27T21:58:24.966Z",
+              "EditorCaption": ""
             }
           ]
         }
